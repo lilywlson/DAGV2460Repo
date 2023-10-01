@@ -13,11 +13,16 @@ public class Health : MonoBehaviour
     public Sprite fullHeart;
     public Sprite emptyHeart;
 
+    public GameObject gameoverRedScreen;
+    public GameObject gameoverText;
+
     // Start is called before the first frame update
     void Start()
     {
         Time.timeScale = 1;
         currentHealth = maxHealth;
+        gameoverRedScreen.SetActive(false);
+        gameoverText.SetActive(false);
     }
 
     public void TakeDamage(int dmgAmount)
@@ -29,6 +34,8 @@ public class Health : MonoBehaviour
         {
             Debug.Log("GAME OVER!");
             Time.timeScale = 0;
+            gameoverRedScreen.SetActive(true);
+            gameoverText.SetActive(true);
         }
     }
 
