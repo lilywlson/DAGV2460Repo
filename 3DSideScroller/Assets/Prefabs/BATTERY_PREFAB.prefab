@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2735976186517720986
+--- !u!1 &1983093636907371284
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,46 +8,48 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3365301026618955040}
-  - component: {fileID: 1809366098671196805}
-  - component: {fileID: 4537622540209532495}
+  - component: {fileID: 1211060979870454190}
+  - component: {fileID: 2837643927950777867}
+  - component: {fileID: 37613570671520449}
+  - component: {fileID: 754430665458545706}
+  - component: {fileID: -6469773069621024032}
   m_Layer: 0
-  m_Name: MedKit
-  m_TagString: Untagged
+  m_Name: BATTERY_PREFAB
+  m_TagString: Collectable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3365301026618955040
+--- !u!4 &1211060979870454190
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2735976186517720986}
-  m_LocalRotation: {x: 0.000000021139309, y: 0.00000000791916, z: -0.06997728, w: 0.9975486}
-  m_LocalPosition: {x: -45.722717, y: 10, z: 0.072672844}
-  m_LocalScale: {x: 100.00001, y: 100.00001, z: 100}
+  m_GameObject: {fileID: 1983093636907371284}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+  m_LocalPosition: {x: -0, y: 18.071064, z: 0}
+  m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &1809366098671196805
+--- !u!33 &2837643927950777867
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2735976186517720986}
-  m_Mesh: {fileID: 5759593775370499232, guid: 35c376e9aff3f7a49b57cde42b3080f0, type: 3}
---- !u!23 &4537622540209532495
+  m_GameObject: {fileID: 1983093636907371284}
+  m_Mesh: {fileID: 3163171260390484736, guid: 513650814fcd30641a48946e85040a4d, type: 3}
+--- !u!23 &37613570671520449
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2735976186517720986}
+  m_GameObject: {fileID: 1983093636907371284}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -61,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 81c36fec1c9b535489dc161e3fb42a82, type: 2}
+  - {fileID: 2100000, guid: 065a28de12d1377479c71f5ca6aa47a9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -83,3 +85,30 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!136 &754430665458545706
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1983093636907371284}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.018075403
+  m_Height: 0.019999996
+  m_Direction: 1
+  m_Center: {x: -4.656613e-10, y: 4.656612e-10, z: 0.0030840905}
+--- !u!114 &-6469773069621024032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1983093636907371284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 855b36667016ca54da5abead8d6a2f4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemType: Battery

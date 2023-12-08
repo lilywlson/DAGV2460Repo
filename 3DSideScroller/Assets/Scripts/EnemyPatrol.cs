@@ -9,11 +9,12 @@ public class EnemyPatrol : MonoBehaviour
     public float rayDistance;
     private bool isMovingRight = true;
     public Transform groundDetection;
+    private bool justTurned;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        justTurned = false;
     }
     public bool isGrounded()
         {
@@ -27,19 +28,25 @@ public class EnemyPatrol : MonoBehaviour
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
         // RaycastHit2D groundInfo = Physics2D.Raycast(groundDetection.position, Vector2.down, rayDistance);
         
-        if(!isGrounded())
+        if(!isGrounded() && !justTurned)
         {
             if(isMovingRight == true)
             {
                 //print("ejafnbhjabfehj");
                 transform.eulerAngles = new Vector3(0, 90, 0);
                 isMovingRight = false;
+                justTurned = true;
             }
             else 
             {
                 transform.eulerAngles = new Vector3(0,-90,0);
                 isMovingRight = true;
+                justTurned = true;
             }
+        }
+        else
+        {
+            justTurned = false;
         }
     }
 }

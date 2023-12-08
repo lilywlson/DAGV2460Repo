@@ -7,6 +7,11 @@ public class PickUpScoreManager : MonoBehaviour
 {
     public int score; // stores score
     public TextMeshProUGUI scoreText; // ref visual text element change
+    
+    void Start()
+    {
+          scoreText.text = "COINS: 0";
+    }
 
    // rewards player
    public void IncreaseScore(int amount)
@@ -25,6 +30,6 @@ public class PickUpScoreManager : MonoBehaviour
    // update text
    public void UpdateScoreText()
    {
-        scoreText.text = "COLLECTABLES: "+ score;
+        scoreText.text = "COINS: "+ score;
    }
 }

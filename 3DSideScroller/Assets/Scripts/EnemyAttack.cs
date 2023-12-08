@@ -10,7 +10,9 @@ public class EnemyAttack : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        playerHealth = GetComponent<Health>();
+        //playerHealth = GetComponent<Health>();
+        //Debug.Log("Player Health = "+ playerHealth.currentHealth);
+        playerHealth = GameObject.Find("faun").GetComponent<Health>();
     }
 
     void OnCollisionEnter(Collision collision)

@@ -24,13 +24,15 @@ public class PlayerController2D : MonoBehaviour
     public LayerMask whatIsGround;
 
     public bool doubleJump;
+    private Health playerHealth;
+    public int health = 1;
 
 
+    public List<string> items;
 
-    //public List<string> items;
-
-    // private PickUpScoreManager pickupscoreManager;
-   // public int scoreToGive;
+    private PickUpScoreManager pickupscoreManager;
+    public int scoreToGive;
+    public int money = 1;
 
     [Header("Animations")]
     private Animator playerAnim;
@@ -38,11 +40,12 @@ public class PlayerController2D : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //pickupscoreManager = GameObject.Find("PickUpScoreManager").GetComponent<PickUpScoreManager>();
-        //items = new List<string>();
+        pickupscoreManager = GameObject.Find("PickUpScoreManager").GetComponent<PickUpScoreManager>();
+        items = new List<string>();
 
         rb = GetComponent<Rigidbody>();
         playerAnim = GetComponent<Animator>();
+        playerHealth = GameObject.Find("faun").GetComponent<Health>();
 
     }
 
@@ -112,16 +115,37 @@ public bool isGrounded()
         }
     }
 
-    /*private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter(Collider collision)
     {
         if(collision.CompareTag("Collectable"))
         {
             string itemType = collision.gameObject.GetComponent<CollectableScript>().itemType;
+                if(itemType == "Medkit")
+                {
+                    playerHealth.AddHealth(health);
+                }
+                if(itemType == "Battery")
+                {
+                    speed = speed + 2;
+                }
+                if(itemType == "Coin")
+                {
+                    pickupscoreManager.IncreaseScore(money);
+                }
+                /*if(itemType == "Shield")
+                {
+
+                }*/
             print("You have collected a:"+ itemType);
-            items.Add(itemType);
-            print("Inventory Length:"+ items.Count);
-            pickupscoreManager.IncreaseScore(scoreToGive);
+            // items.Add(itemType);
+            // print("Inventory Length:"+ items.Count);
+            // pickupscoreManager.IncreaseScore(scoreToGive);
             Destroy(collision.gameObject);
         }
-    }*/
+
+        if(collision.CompareTag("Checkpoint"))
+        {
+            print("You have reached the Checkpoint!");
+        }
+    }
 }
