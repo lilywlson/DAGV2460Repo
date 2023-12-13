@@ -156,7 +156,6 @@ MonoBehaviour:
   - {fileID: 2753373536991978844, guid: 67487f5072a1ea14d8d9ac1e72cb5639, type: 3}
   - {fileID: 1983093636907371284, guid: f5025ac4b7253004984178d9f1289de2, type: 3}
   - {fileID: 7775038902929166019, guid: dea9e2c58e2285b49aed8f2be9e319ef, type: 3}
-  - {fileID: 8626080712594583916, guid: 42d3eeb4a0bcdcf4cab1a03427c9d86b, type: 3}
   spawnRangeX: 45
 --- !u!4 &103673189
 Transform:

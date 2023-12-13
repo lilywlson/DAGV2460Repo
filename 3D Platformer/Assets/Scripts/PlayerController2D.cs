@@ -26,7 +26,7 @@ public class PlayerController2D : MonoBehaviour
     public bool doubleJump;
     private Health playerHealth;
     public int health = 1;
-
+    //public bool hasShield = false;
 
     public List<string> items;
 
@@ -134,7 +134,7 @@ public bool isGrounded()
                 }
                 /*if(itemType == "Shield")
                 {
-
+                    hasShield = true;
                 }*/
             print("You have collected a:"+ itemType);
             // items.Add(itemType);

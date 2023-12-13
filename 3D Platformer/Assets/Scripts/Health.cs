@@ -13,6 +13,8 @@ public class Health : MonoBehaviour
     public Sprite fullHeart;
     public Sprite emptyHeart;
 
+    //public bool hasShield;
+
     // public GameObject gameoverRedScreen;
     // public GameObject gameoverText;
 
@@ -27,15 +29,23 @@ public class Health : MonoBehaviour
 
     public void TakeDamage(int dmgAmount)
     {
-        currentHealth -= dmgAmount;
-        Debug.Log("Player Health = "+ currentHealth);
-
-        if(currentHealth <=0)
+        /*if(hasShield == true)
         {
-            Debug.Log("GAME OVER!");
-            Time.timeScale = 0;
-            // gameoverRedScreen.SetActive(true);
-            // gameoverText.SetActive(true);
+            currentHealth = currentHealth;
+            hasShield = false;
+        }
+        else*/
+        {
+            currentHealth -= dmgAmount;
+            Debug.Log("Player Health = "+ currentHealth);
+
+            if(currentHealth <=0)
+            {
+                Debug.Log("GAME OVER!");
+                Time.timeScale = 0;
+                // gameoverRedScreen.SetActive(true);
+                // gameoverText.SetActive(true);
+            }
         }
     }
 
